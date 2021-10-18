@@ -1,0 +1,33 @@
+.description{
+	margin-top: -1.5em;
+}
+.social-handles-section{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.social-handles-section .input-cont{
+	margin: 1.5em 0 0;
+}
+
+
+@media (min-width: 980px) {
+	.social-handles-section{
+		flex-direction: row;
+	}
+	.input-cont{
+		width: 32vw;
+
+	}
+	.input-cont input{
+		width: 100%;
+
+	}
+	.input-cont-1, .input-cont-2{
+		padding-right: 1em;
+	}
+	.input-cont-3{
+		padding-left: 1em;
+	}
+	
+}

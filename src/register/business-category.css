@@ -1,0 +1,33 @@
+.input-section{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.input-section .input-cont{
+	margin: 1.5em 0 0;
+}
+
+.pos-question{
+	margin-top: 2em;
+}
+
+@media (min-width: 980px) {
+	.input-section{
+		flex-direction: row;
+	}
+	.input-cont{
+		width: 32vw;
+
+	}
+	.input-cont input{
+		width: 100%;
+
+	}
+	.select-cont-1{
+		padding-right: 1em;
+	}
+	.select-cont-2{
+		padding-left: 1em;
+	}
+	
+}
