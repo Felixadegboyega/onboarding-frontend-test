@@ -19,9 +19,10 @@
 }
 .left-img{
 	width: 100% !important;
-	/* margin-top: 75%; */
 	position: absolute;
-	bottom: 10em;
+	top: 30%;
+	-webkit-user-drag: none;
+	user-select: none;
 }
 .left-cont{
 	position: relative;
@@ -184,30 +185,36 @@ input:focus{
 
 @media (min-width: 640px) {
 	
-	.logout-button{
-		display: unset !important;
-	}
 	.left-cont {
 		display: unset;
 	}
-
+	
 }
 
 
 @media (min-width: 980px) {
+	.logout-button{
+		display: unset !important;
+	}
 	.right-cont{
 		padding: 2em 4em 1em ;
 		max-height: 100vh;
 		overflow: auto;
 	}
+	
+	.navigation{
+		border-bottom: 1px solid #f3f3f3;
+		padding: 3em 0 1em;
+	}
+}
+
+@media (min-width: 1030px) {
+	
 	.nav-link-heading{
 		display: block;
 		margin: auto .8em;
 		font-weight: 500;
 		font-size: 1.1em;
 	}
-	.navigation{
-		border-bottom: 1px solid #f3f3f3;
-		padding: 3em 0 1em;
-	}
+	
 }
