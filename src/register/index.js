@@ -49,10 +49,10 @@ export default function Register() {
 		let value = e.target.value;
 		setRegDetails( {...regDetails, [ name ]: value} );
 
-		if ( name === 'bvn' && value.length == 11) {
+		if ( name === 'bvn' && value.length === 11) {
 			let updatedSteps = steps.map((each, i)=>each.id === 1 ? {...each, completed:true} : each)
 			setSteps( updatedSteps );
-		} else if((name === 'accountNum' || name === 'bank') && (regDetails.accountNum.length > 8 && regDetails.bank != '')) {
+		} else if((name === 'accountNum' || name === 'bank') && (regDetails.accountNum.length > 8 && regDetails.bank !== '')) {
 			let updatedSteps = steps.map((each, i)=>each.id === 1 ? {...each, completed:true} : each)
 			setSteps( updatedSteps );
 		} else {
