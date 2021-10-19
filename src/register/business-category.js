@@ -1,20 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './index.css'
 import './business-category.css';
 
 
-export default function BusinessCategory(props ) {
-	// let {handleInputChange, regDetails} = props;
-	// let context = React.useContext( regContext );
-	// let {handleInputChange} = context;
-	const [ socialHandles, setSocialHandles ] = useState( {type: '', category: '', usingPOS : false} );
-
-	const handleInputChange = (e) => {
-		setSocialHandles( {...socialHandles, [ e.target.name ]: e.target.value} );
-	}
-	const changeUsingPOS = (condition) => {
-		setSocialHandles({...socialHandles, usingPOS:condition})
-	}
+export default function BusinessCategory( props ) {
+	let {handleInputChange, regDetails, changeUsingPOS} = props;
+	
+	
 	return (
 		<div className="fade left-slide">
 			<small className="text-num">Step 3/3</small>
@@ -23,17 +15,17 @@ export default function BusinessCategory(props ) {
 				<div className="input-section">
 					<div className="input-cont select-cont-1">
 						<label>Type of your business </label>
-						<select value={socialHandles.type} onChange={handleInputChange} name="type"></select>
+						<select value={regDetails.type} onChange={handleInputChange} name="type"></select>
 					</div>	
 					<div className="input-cont select-cont-2">
 						<label>Business Category </label>
-						<select value={socialHandles.category} onChange={handleInputChange} name="category" ></select>
+						<select value={regDetails.category} onChange={handleInputChange} name="category" ></select>
 					</div>	
 				</div>
 				<div className="pos-question">
 					<small className="sub-text">Do you use POS machines for your business?</small>
-					<div onClick={()=>changeUsingPOS(true)} className={`option-button ${socialHandles.usingPOS ? 'active' : ''}`}>Yes</div>
-					<div onClick={()=>changeUsingPOS(false)} className={`option-button ${!socialHandles.usingPOS ? 'active' : ''}`}>No</div>
+					<div onClick={()=>changeUsingPOS(true)} className={`option-button ${regDetails.usingPOS ? 'active' : ''}`}>Yes</div>
+					<div onClick={()=>changeUsingPOS(false)} className={`option-button ${!regDetails.usingPOS ? 'active' : ''}`}>No</div>
 				</div>
 
 				

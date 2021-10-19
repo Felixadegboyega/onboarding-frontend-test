@@ -52,8 +52,6 @@
 	display: none;
 }
 @keyframes dropAnimation {
-	/* from{height: 10px;};
-	to{height: 50px !important;} */
 	0% {
         transform: rotateX(-90deg)
     }
@@ -63,6 +61,23 @@
     100% {
         transform: rotateX(0deg) 
     }
+}
+@keyframes bvndropAnimation {
+	0% {
+        transform: rotateX(-90deg)
+    }
+    70% {
+        transform: rotateX(20deg) 
+    }
+    100% {
+        transform: rotateX(0deg) 
+    }
+}
+.drop{
+	animation: dropAnimation .7s ease-in-out;
+}
+.bvndrop{
+	animation: bvndropAnimation .5s ease-in-out;
 }
 .show-bvn-info{
 	animation: dropAnimation .7s ease-in-out;

@@ -1,9 +1,7 @@
-// import {KeyboardArrowDown, Lock} from '@material-ui/icons';
 import React, {useState} from 'react'
 import './index.css'
 import './verify-account.css';
 import lock from '../assets/Union.svg'
-import bvnlock from '../assets/Lock.svg'
 
 
 export default function VerifyAccount( props ) {
@@ -13,12 +11,7 @@ export default function VerifyAccount( props ) {
 		setShowBVNInfo( !showBVNInfo );
 	}
 	const [ method, setMethod ] = useState( 'BVN' );
-	const [ socialHandles, setSocialHandles ] = useState( {accountNum: '', bank: '', bvn:''} );
 
-	// const handleInputChange = (e) => {
-	// 	setSocialHandles( {...socialHandles, [ e.target.name ]: e.target.value} );
-	// }
-	
 	return (
 		<div className="fade left-slide">
 			<small className="text-num">Step 1/3</small>
@@ -30,7 +23,7 @@ export default function VerifyAccount( props ) {
 				
 				{
 					method === 'BVN' ?
-						<div className="fade">
+						<div className="bvndrop">
 							<div className="input-cont bvn">
 								<label>Bank Verification Number (11-digits) </label>
 								<input value={regDetails.bvn} onChange={handleInputChange} name="bvn" />
@@ -77,15 +70,19 @@ export default function VerifyAccount( props ) {
 							</div>
 						</div>
 					:
-						<div className="fade">
+						<div className="drop">
 							<div className="input-section">
 								<div className="input-cont select-cont-1">
 									<label>Account Number </label>
-									<input value={socialHandles.accountNum} onChange={handleInputChange} name="accountNum"></input>
+									<input value={regDetails.accountNum} onChange={handleInputChange} name="accountNum"></input>
 								</div>	
 								<div className="input-cont select-cont-2">
 									<label>Select Bank </label>
-									<select value={socialHandles.bank} onChange={handleInputChange} name="bank" ></select>
+									<select value={regDetails.bank} onChange={handleInputChange} name="bank" >
+										<option value="Access">Access</option>
+										<option value="GTB">GTB</option>
+										<option value="First Bank">First Bank</option>
+									</select>
 								</div>	
 							</div>
 						</div>
